@@ -1,0 +1,43 @@
+{
+  "name": "catscript-syntax-highlighting",
+  "displayName": "CatScript Syntax Highlighting",
+  "description": "Syntax highlighting for CatScript files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./"
+  },
+  "main": "out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "catscript",
+        "aliases": [
+          "catscript",
+          "catscript"
+        ],
+        "extensions": [
+          ".cat"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "catscript",
+        "scopeName": "source.cat.script",
+        "path": "./syntaxes/catscript.tmLanguage.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.7",
+    "vscode": "^1.1.37"
+  }
+}
